@@ -37,9 +37,9 @@ while i<len(df1):
     PCBA = df1.iloc[i,1]
     component = df1.iloc[i,0]
     #PCBA
-    #component
+    component
     err, res = mouser.search_by_PN(component)
-    #res
+    res
     i = i+1
     if err:
         print("Error during request:")
