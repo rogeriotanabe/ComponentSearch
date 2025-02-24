@@ -22,7 +22,7 @@ if uploaded_file is not None:
 #df1
 
 user = st.secrets["mouserCredential"]
-user
+#user
 mouser = pymouser.MouserAPI(user)
 
 data ={}
@@ -40,6 +40,7 @@ while i<len(df1):
     component
     err, res = mouser.search_by_PN(component)
     res
+    err
     i = i+1
     if err:
         print("Error during request:")
