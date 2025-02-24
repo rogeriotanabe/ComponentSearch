@@ -22,7 +22,7 @@ if uploaded_file is not None:
 #df1
 
 user = st.secrets["mouserCredential"]
-
+user
 mouser = pymouser.MouserAPI(user)
 
 data ={}
