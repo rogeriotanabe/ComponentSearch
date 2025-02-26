@@ -3,29 +3,30 @@ import pandas as pd
 import pymouser
 import numpy as np
 import requests
-
+import matplotlib.pyplot as plt
 
 
 st.set_page_config(layout="wide",page_title="Component Lifecycle Management")
 
 
-
+defBgColorVigente = '#B8E7A7'
+defBgColorObsoleto = 'red'
+defBgColorPnNotFound = 'yellow'
 
 df1 = ""
-#df1 = pd.read_csv("bom.csv")
+
+stsObsoleto = 0
+stsVigente = 0
+stsNaoEncontrado = 0
 
 
-
-
-
-uploaded_file = st.file_uploader("Choose a file")
-if uploaded_file is not None:
-    df1 = pd.read_csv(uploaded_file)
-
-#df1
+with st.sidebar:
+    uploaded_file = st.file_uploader("Choose a BoM file")
+    if uploaded_file is not None:
+        df1 = pd.read_csv(uploaded_file)
 
 user = st.secrets["mouserCredential"]
-#user
+
 mouser = pymouser.MouserAPI(user)
 
 data ={}
@@ -39,11 +40,9 @@ i =0
 while i<len(df1):    
     PCBA = df1.iloc[i,1]
     component = df1.iloc[i,0]
-    #PCBA
-    #component
+
     err, res = mouser.search_by_PN(component)
     #res
-    #err
     i = i+1
     if err:
         print("Error during request:")
@@ -76,10 +75,15 @@ while i<len(df1):
                 compReplacement = res["Parts"][0]["SuggestedReplacement"]
 
                 if not compLifecycle:
+                    stsVigente = stsVigente+1
                     compLc = "Vigente"
                 else:
                     compLc =res["Parts"][0]["LifecycleStatus"]
-                
+                    if compLc == "Obsolete":
+                        compLc = "Obsoleto"
+                        stsObsoleto = stsObsoleto+1
+                    else:
+                        stsNaoEncontrado = stsNaoEncontrado +1
                 
                 data = {'PCBA':[PCBA],
                                 'PN':[component],
@@ -103,20 +107,20 @@ def fontColor_conditional(val):
     if val=="Vigente":
         color = 'black'
     if val == 'PN not found':
-        color = '#FF0000'       #vermelho
+        color = '#FF0000'
     if val == 'Obsolete':
-        color = '#FFFF00'        #amarelo
+        color = '#FFFF00'
 
     return 'color: %s' % color
 
 def bgcolor_condtional(val):
     bgcolor = 'white'
     if val == 'PN not found':
-        bgcolor = 'yellow'
-    if val == 'Obsolete':
-        bgcolor = 'red'
+        bgcolor = defBgColorPnNotFound
+    if val == 'Obsoleto':
+        bgcolor = defBgColorObsoleto
     if val == 'Vigente':
-        bgcolor = '#B8E7A7'                 #verde claro  
+        bgcolor = defBgColorVigente
     
     return 'background-color: %s' % bgcolor
 
@@ -128,28 +132,42 @@ s = dataTable.style\
     .map(fontColor_conditional)\
     .map(bgcolor_condtional)\
 
+
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.subheader("Vigente", divider="green")
+    st.title(stsVigente )
+
+with col2:
+    st.subheader("Obsoleto", divider="red")
+    st.title(stsObsoleto)
+
+with col3:
+    st.subheader("PN Not found", divider="orange")
+    st.title(stsNaoEncontrado)
+
 s
 
+with st.sidebar:
+ 
+    
+ 
+    
+
+    
+    
+    arr = np.random.normal(1, 1, size=100)
+    fig, ax = plt.subplots()
+
+    labels = 'Vigente', 'Obsoleto', 'Não Encontrado'
+    sizes = [stsVigente,  stsObsoleto, stsNaoEncontrado]
 
 
+    fig.patch.set_facecolor('none')
+    ax.patch.set_facecolor('none')
+    
+    if stsNaoEncontrado+stsVigente+stsObsoleto!=0:
+        ax.pie(sizes, labels=labels,autopct='%1.1f%%',colors=[defBgColorVigente, defBgColorObsoleto,defBgColorPnNotFound],textprops={'fontsize': 'large'})
 
+        st.pyplot(fig)
 
-api_key =user
-url = 'https://api.mouser.com/api/v1/usage'
-
-headers = {
-    'apikey': api_key
-}
-
-response = requests.get(url, headers=headers)
-
-if response.status_code == 200:
-    data = response.json()
-    remaining_calls = data.get('remainingCalls')
-    remaining_calls
-#    print(f'Remaining API calls: {remaining_calls}')
-else:
-    data = response.json()
-    remaining_calls = data.get('remainingCalls')
-    remaining_calls
-    #print(f'Error: {response.status_code}')
