@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import pymouser
 import numpy as np
+import requests
+
+
 
 st.set_page_config(layout="wide",page_title="Component Lifecycle Management")
 
@@ -127,3 +130,22 @@ s = dataTable.style\
 
 s
 
+
+
+
+
+api_key =user
+url = 'https://api.mouser.com/api/v1/usage'
+
+headers = {
+    'apikey': api_key
+}
+
+response = requests.get(url, headers=headers)
+
+if response.status_code == 200:
+    data = response.json()
+    remaining_calls = data.get('remainingCalls')
+    print(f'Remaining API calls: {remaining_calls}')
+else:
+    print(f'Error: {response.status_code}')
