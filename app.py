@@ -21,7 +21,7 @@ stsNaoEncontrado = 0
 
 
 with st.sidebar:
-    uploaded_file = st.file_uploader("Choose a BoM file")
+    uploaded_file = st.file_uploader("Choose a BoM file to evaluate the component availability")
     if uploaded_file is not None:
         df1 = pd.read_csv(uploaded_file)
 
