@@ -146,6 +146,10 @@ response = requests.get(url, headers=headers)
 if response.status_code == 200:
     data = response.json()
     remaining_calls = data.get('remainingCalls')
-    print(f'Remaining API calls: {remaining_calls}')
+    remaining_calls
+#    print(f'Remaining API calls: {remaining_calls}')
 else:
-    print(f'Error: {response.status_code}')
+    data = response.json()
+    remaining_calls = data.get('remainingCalls')
+    remaining_calls
+    #print(f'Error: {response.status_code}')
