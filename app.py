@@ -18,6 +18,7 @@ df1 = ""
 stsObsoleto = 0
 stsVigente = 0
 stsNaoEncontrado = 0
+stsRestrictedAvailability = 0
 
 
 with st.sidebar:
@@ -82,7 +83,10 @@ while i<len(df1):
                     if compLc == "Obsolete":
                         compLc = "Obsoleto"
                         stsObsoleto = stsObsoleto+1
-                    else:
+                    if compLc == "Restricted Availability":
+                        compLc = "Restricted Availability"
+                        stsRestrictedAvailability = stsRestrictedAvailability+1
+                    if compLc == "PN not found":
                         stsNaoEncontrado = stsNaoEncontrado +1
                 
                 data = {'PCBA':[PCBA],
@@ -108,9 +112,10 @@ def fontColor_conditional(val):
         color = 'black'
     if val == 'PN not found':
         color = '#FF0000'
-    if val == 'Obsolete':
+    if val == 'Obsoleto':
         color = '#FFFF00'
-
+    if val == 'Restricted Availability':
+        color = '#FFFF00'
     return 'color: %s' % color
 
 def bgcolor_condtional(val):
@@ -119,6 +124,10 @@ def bgcolor_condtional(val):
         bgcolor = defBgColorPnNotFound
     if val == 'Obsoleto':
         bgcolor = defBgColorObsoleto
+
+    if val == 'Restricted Availability':
+        bgcolor = defBgColorObsoleto
+
     if val == 'Vigente':
         bgcolor = defBgColorVigente
     
@@ -133,7 +142,7 @@ s = dataTable.style\
     .map(bgcolor_condtional)\
 
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3,col4 = st.columns(4)
 with col1:
     st.subheader("Vigente", divider="green")
     st.title(stsVigente )
@@ -143,6 +152,10 @@ with col2:
     st.title(stsObsoleto)
 
 with col3:
+    st.subheader("Restricted Availability", divider="red")
+    st.title(stsRestrictedAvailability)
+
+with col4:
     st.subheader("PN Not found", divider="orange")
     st.title(stsNaoEncontrado)
 
@@ -159,8 +172,8 @@ with st.sidebar:
     arr = np.random.normal(1, 1, size=100)
     fig, ax = plt.subplots()
 
-    labels = 'Vigente', 'Obsoleto', 'Não Encontrado'
-    sizes = [stsVigente,  stsObsoleto, stsNaoEncontrado]
+    labels = 'Vigente', 'Obsoleto', 'Não Encontrado','Restricted Availability'
+    sizes = [stsVigente,  stsObsoleto, stsNaoEncontrado,stsRestrictedAvailability]
 
 
     fig.patch.set_facecolor('none')
