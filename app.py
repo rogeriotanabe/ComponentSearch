@@ -174,11 +174,12 @@ with col3:
     st.title(stsRestrictedAvailability)
 
 with col4:
-    #st.subheader("Não Encont.", divider="orange")
-    st.subheader("Não Encont.")
-    st.markdown("""<hr style="height:8px;border:none;color:#FFC000;background-color:#FFC000;" /> """, unsafe_allow_html=True) 
-    st.html("""<h1 style="font-size:8vw;">Hello World</h1>
+    st.html("""<h5 style="font-size:8vw;">Não Encotr.</h1>
                 <p style="font-size:2vw;">Resize the browser window to see how the font size scales.</p>""")
+    #st.subheader("Não Encont.", divider="orange")
+    #st.subheader("Não Encont.")
+    st.markdown("""<hr style="height:8px;border:none;color:#FFC000;background-color:#FFC000;" /> """, unsafe_allow_html=True) 
+    
     st.title(stsNaoEncontrado)
 
 s
