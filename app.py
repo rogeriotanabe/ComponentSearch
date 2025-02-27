@@ -162,7 +162,7 @@ with col2:
     st.title(stsObsoleto)
 
 with col3:
-    st.html("""<p style="font-size:1.7em;color:#7030A0 ">Restrito</p>
+    st.html("""<p style="font-size:1.7em;color:{'#7030A0'} ">Restrito</p>
             <hr style="height:0.3vh;border:none;color:${"#7030A0"};background-color:${"#7030A0"};"> """)
     st.title(stsRestrictedAvailability)
 
