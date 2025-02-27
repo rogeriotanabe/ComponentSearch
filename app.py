@@ -178,7 +178,7 @@ with col4:
 #                <p style="font-size:2vw;">Resize the browser window to see how the font size scales.</p>""")
     
     #st.html("""<h6 style="font-size:2vw;">Não Encotr.</h6>""")
-    st.html("""<h1 style="font-size:4em; >Não Encotr.</h1>""")
+    st.html("""<p style="font-size:4em; ">Não Encotr.</p>""")
     
     #st.subheader("Não Encont.", divider="orange")
     #st.subheader("Não Encont.")
