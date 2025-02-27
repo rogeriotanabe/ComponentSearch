@@ -161,11 +161,11 @@ with col2:
     st.title(stsObsoleto)
 
 with col3:
-    st.subheader("Restricted Av.", divider="red")
+    st.subheader("Restrito", divider="red")
     st.title(stsRestrictedAvailability)
 
 with col4:
-    st.subheader("Not found", divider="orange")
+    st.subheader("Não Encont.", divider="orange")
     st.title(stsNaoEncontrado)
 
 s
