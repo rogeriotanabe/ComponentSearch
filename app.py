@@ -92,9 +92,9 @@ while i<len(df1):
                         stsRestrictedAvailability = stsRestrictedAvailability+1
                     
                         
-                component
-                compLifecycle
-                compLc
+                #component
+                #compLifecycle
+                #compLc
                 data = {'PCBA':[PCBA],
                                 'PN':[component],
                                 'MouserPartNumber': [match['MouserPartNumber']],
@@ -170,14 +170,8 @@ with col4:
 
 s
 
-with st.sidebar:
+with st.sidebar:   
  
-    
- 
-    
-
-    
-    
     arr = np.random.normal(1, 1, size=100)
     fig, ax = plt.subplots()
 
