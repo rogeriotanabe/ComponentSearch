@@ -12,6 +12,7 @@ st.set_page_config(layout="wide",page_title="Component Lifecycle Management")
 defBgColorVigente = '#B8E7A7'
 defBgColorObsoleto = 'red'
 defBgColorPnNotFound = 'yellow'
+defBgColorRestricted = "#7030A0"
 
 df1 = ""
 
@@ -132,7 +133,7 @@ def bgcolor_condtional(val):
         bgcolor = defBgColorObsoleto
 
     if val == 'Restricted Availability':
-        bgcolor = defBgColorObsoleto
+        bgcolor = defBgColorRestricted
 
     if val == 'Vigente':
         bgcolor = defBgColorVigente
@@ -150,51 +151,24 @@ s = dataTable.style\
 
 col1, col2, col3,col4 = st.columns(4)
 with col1:
- 
- 
-
-    #st.subheader("Vigente", divider="green")
-#    st.subheader("Vigente")
     st.html("""<p style="font-size:1.5em; ">Vigente</p>
                 <hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;"/> 
     """)
-
-    #st.markdown("""<hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;" /> """, unsafe_allow_html=True) 
-
     st.title(stsVigente )
 
 with col2:
-    #st.subheader("Obsoleto", divider="red")
-    #st.subheader("Obsoleto")
     st.html("""<p style="font-size:1.5em; ">Obsoleto</p>
-            <hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;"/> """)
-    
-
+            <hr style="height:8px;border:none;color:#FF0000;background-color:#FF0000;"/> """)
     st.title(stsObsoleto)
 
 with col3:
-    #st.subheader("Restrito", divider="red")
-    #st.subheader("Restrito")
     st.html("""<p style="font-size:1.5em; ">Restrito</p>
                 <hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;"/> """)
-    #st.markdown("""<hr style="height:8px;border:none;color:#7030A0;background-color:#7030A0;"/> """, unsafe_allow_html=True) 
-
     st.title(stsRestrictedAvailability)
 
 with col4:
-#    st.html("""<h5 style="font-size:3vw;">Não Encotr.</h5>
-#                <p style="font-size:2vw;">Resize the browser window to see how the font size scales.</p>""")
-    
-    #st.html("""<h6 style="font-size:2vw;">Não Encotr.</h6>""")
     st.html("""<p style="font-size:1.5em; ">Não Encotr.</p>
-            <hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;"/> """)
-    
-    #st.subheader("Não Encont.", divider="orange")
-    #st.subheader("Não Encont.")
-
-
-    #st.markdown("""<hr style="height:8px;border:none;color:#FFC000;background-color:#FFC000;"/> """, unsafe_allow_html=True) 
-    
+            <hr style="height:8px;border:none;color:#7030A0;background-color:#7030A0;"/> """)
     st.title(stsNaoEncontrado)
 
 s
@@ -212,7 +186,7 @@ with st.sidebar:
     ax.patch.set_facecolor('none')
     
     if stsNaoEncontrado+stsVigente+stsObsoleto!=0:
-        ax.pie(sizes, labels=labels,autopct='%1.1f%%',colors=[defBgColorVigente, defBgColorObsoleto,defBgColorPnNotFound],textprops={'fontsize': 'large'})
+        ax.pie(sizes, labels=labels,autopct='%1.1f%%',colors=[defBgColorVigente, defBgColorObsoleto,defBgColorRestricted],textprops={'fontsize': 'large'})
 
         st.pyplot(fig)
 
