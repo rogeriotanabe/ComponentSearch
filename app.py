@@ -167,8 +167,8 @@ with col3:
             <hr style="height:0.3vh;border:none;color:#7030A0;background-color:#7030A0;"> 
             """)
 
-    #st.title(stsRestrictedAvailability)
-    st.html(f'<p style="background-color:#0066cc;color:#33ff33;font-size:3em;border-radius:2%;">{stsRestrictedAvailability}</p>', unsafe_allow_html=True)
+    st.title(stsRestrictedAvailability)
+    #st.html(f'<p style="background-color:#0066cc;color:#33ff33;font-size:3em;border-radius:2%;">{stsRestrictedAvailability}</p>', unsafe_allow_html=True)
     
 
 with col4:
