@@ -162,9 +162,9 @@ with col2:
     st.title(stsObsoleto)
 
 with col3:
-    variavel = "#7030A0"
-    st.html("""<p style="font-size:1.7em;color:{"variavel"} ">Restrito</p>
-            <hr style="height:0.3vh;border:none;color:${"variavel"};background-color:${"variavel"};"> """)
+    
+    st.html("""<p style="font-size:1.7em;color:#7030A0 ">Restrito</p>
+            <hr style="height:0.3vh;border:none;color:#7030A0;background-color:#7030A0;"> """)
     st.title(stsRestrictedAvailability)
 
 with col4:
