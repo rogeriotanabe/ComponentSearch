@@ -87,7 +87,11 @@ while i<len(df1):
                         compLc = "Restricted Availability"
                         stsRestrictedAvailability = stsRestrictedAvailability+1
                     if compLc == "PN not found":
+                        compLc = "PN not found"
                         stsNaoEncontrado = stsNaoEncontrado +1
+                        compLc
+                        component
+                        stsNaoEncontrado
                 
                 data = {'PCBA':[PCBA],
                                 'PN':[component],
