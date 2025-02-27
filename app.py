@@ -155,8 +155,11 @@ with col1:
 
     #st.subheader("Vigente", divider="green")
 #    st.subheader("Vigente")
-    st.html("""<p style="font-size:1.5em; ">Vigente</p>""")
-    st.markdown("""<hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;" /> """, unsafe_allow_html=True) 
+    st.html("""<p style="font-size:1.5em; ">Vigente</p>
+                <hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;"/> 
+    """)
+
+    #st.markdown("""<hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;" /> """, unsafe_allow_html=True) 
 
     st.title(stsVigente )
 
