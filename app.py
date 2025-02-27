@@ -165,7 +165,10 @@ with col3:
     
     st.html("""<p style="font-size:1.7em;color:#7030A0 ">Restrito</p>
             <hr style="height:0.3vh;border:none;color:#7030A0;background-color:#7030A0;"> """)
-    st.title(stsRestrictedAvailability)
+
+    #st.title(stsRestrictedAvailability)
+    st.markdown(f'<p style="background-color:#0066cc;color:#33ff33;font-size:24px;border-radius:2%;">{stsRestrictedAvailability}</p>', unsafe_allow_html=True)
+    
 
 with col4:
     st.html("""<p style="font-size:1.7em;color:#FFC000 ">Não Encotrado</p>
