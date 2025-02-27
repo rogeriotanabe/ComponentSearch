@@ -178,9 +178,12 @@ with col4:
 #                <p style="font-size:2vw;">Resize the browser window to see how the font size scales.</p>""")
     
     #st.html("""<h6 style="font-size:2vw;">Não Encotr.</h6>""")
-    st.html("""<h3>Não Encotr.</h3>""")
+    st.html("""<p style="font-size:4em; >Não Encotr.</p>""")
+    
     #st.subheader("Não Encont.", divider="orange")
     #st.subheader("Não Encont.")
+
+
     st.markdown("""<hr style="height:8px;border:none;color:#FFC000;background-color:#FFC000;" /> """, unsafe_allow_html=True) 
     
     st.title(stsNaoEncontrado)
