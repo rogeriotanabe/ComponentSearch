@@ -155,28 +155,28 @@ with col1:
 
     #st.subheader("Vigente", divider="green")
     st.subheader("Vigente")
-    st.markdown("""<hr style="height:10px;border:none;color:#4EA72E;background-color:#4EA72E;" /> """, unsafe_allow_html=True) 
+    st.markdown("""<hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;" /> """, unsafe_allow_html=True) 
 
     st.title(stsVigente )
 
 with col2:
     #st.subheader("Obsoleto", divider="red")
     st.subheader("Obsoleto")
-    st.markdown("""<hr style="height:10px;border:none;color:#FF0000;background-color:#FF0000;" /> """, unsafe_allow_html=True) 
+    st.markdown("""<hr style="height:8px;border:none;color:#FF0000;background-color:#FF0000;" /> """, unsafe_allow_html=True) 
 
     st.title(stsObsoleto)
 
 with col3:
     #st.subheader("Restrito", divider="red")
     st.subheader("Restrito")
-    st.markdown("""<hr style="height:10px;border:none;color:#7030A0;background-color:#7030A0;" /> """, unsafe_allow_html=True) 
+    st.markdown("""<hr style="height:8px;border:none;color:#7030A0;background-color:#7030A0;" /> """, unsafe_allow_html=True) 
 
     st.title(stsRestrictedAvailability)
 
 with col4:
     #st.subheader("Não Encont.", divider="orange")
     st.subheader("Não Encont.")
-    st.markdown("""<hr style="height:10px;border:none;color:#FFC000;background-color:#FFC000;" /> """, unsafe_allow_html=True) 
+    st.markdown("""<hr style="height:8px;border:none;color:#FFC000;background-color:#FFC000;" /> """, unsafe_allow_html=True) 
 
     st.title(stsNaoEncontrado)
 
