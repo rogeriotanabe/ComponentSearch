@@ -162,8 +162,10 @@ with col2:
     st.title(stsObsoleto)
 
 with col3:
+    #st.html("""<p style="font-size:1.5em; ">Restrito</p>
+    #            <hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;"/> """)
     st.html("""<p style="font-size:1.5em; ">Restrito</p>
-                <hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;"/> """)
+                <hr style="height:8px;border:none;color:{defBgColorRestricted};background-color:#4EA72E;"/> """)
     st.title(stsRestrictedAvailability)
 
 with col4:
