@@ -10,8 +10,8 @@ st.set_page_config(layout="wide",page_title="Component Lifecycle Management")
 
 
 defBgColorVigente = '#B8E7A7'
-defBgColorObsoleto = 'red'
-defBgColorPnNotFound = 'yellow'
+defBgColorObsoleto = '#FF0000'
+defBgColorPnNotFound = '#FFC000'
 defBgColorRestricted = "#7030A0"
 
 df1 = ""
@@ -165,12 +165,12 @@ with col3:
     #st.html("""<p style="font-size:1.5em; ">Restrito</p>
     #            <hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;"/> """)
     st.html("""<p style="font-size:1.5em; ">Restrito</p>
-                <hr style="height:8px;border:none;color:defBgColorRestricted;background-color:defBgColorRestricted};"/> """)
+                <hr style="height:8px;border:none;color:#7030A0;background-color:#7030A0};"/> """)
     st.title(stsRestrictedAvailability)
 
 with col4:
     st.html("""<p style="font-size:1.5em; ">Não Encotr.</p>
-            <hr style="height:8px;border:none;color:#7030A0;background-color:#7030A0;"/> """)
+            <hr style="height:8px;border:none;color:#FFC000;background-color:#FFC000;"/> """)
     st.title(stsNaoEncontrado)
 
 s
