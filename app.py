@@ -74,6 +74,8 @@ while i<len(df1):
                 compLifecycle = res["Parts"][0]["LifecycleStatus"]
                 compLeadTime = res["Parts"][0]["LeadTime"]
                 compReplacement = res["Parts"][0]["SuggestedReplacement"]
+                component
+                compLifecycle
 
                 if not compLifecycle:
                     stsVigente = stsVigente+1
@@ -89,9 +91,7 @@ while i<len(df1):
                     if compLc == "PN not found":
                         compLc = "PN not found"
                         stsNaoEncontrado = stsNaoEncontrado +1
-                        compLc
-                        component
-                        stsNaoEncontrado
+                        
                 
                 data = {'PCBA':[PCBA],
                                 'PN':[component],
