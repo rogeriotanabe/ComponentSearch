@@ -165,7 +165,7 @@ with col3:
     st.title(stsRestrictedAvailability)
 
 with col4:
-    st.subheader("PN Not found", divider="orange")
+    st.subheader("Not found", divider="orange")
     st.title(stsNaoEncontrado)
 
 s
