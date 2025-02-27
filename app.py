@@ -165,7 +165,7 @@ with col3:
     #st.html("""<p style="font-size:1.5em; ">Restrito</p>
     #            <hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;"/> """)
     st.html("""<p style="font-size:1.5em; ">Restrito</p>
-                <hr style="height:8px;border:none;color:{"defBgColorRestricted"};background-color:{"defBgColorRestricted"};"/> """)
+                <hr style="height:8px;border:none;color:defBgColorRestricted;background-color:defBgColorRestricted};"/> """)
     st.title(stsRestrictedAvailability)
 
 with col4:
