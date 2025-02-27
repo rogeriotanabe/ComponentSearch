@@ -150,7 +150,18 @@ s = dataTable.style\
 
 col1, col2, col3,col4 = st.columns(4)
 with col1:
-    st.subheader("Vigente", divider="green")
+    st.markdown(''':red[Vigente] ''')
+    st.html(
+    '''
+    <style>
+    hr {
+        border-color: red;
+    }
+    </style>
+    '''
+    )
+    
+    #st.subheader("Vigente", divider="green")
     st.title(stsVigente )
 
 with col2:
