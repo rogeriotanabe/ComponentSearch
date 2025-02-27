@@ -163,12 +163,12 @@ with col2:
 
 with col3:
     st.html("""<p style="font-size:1.5em;color:#7030A0 ">Restrito</p>
-            <hr style="height:1vh;border:none;color:#7030A0;background-color:#7030A0;"> """)
+            <hr style="height:0.2vh;border:none;color:#7030A0;background-color:#7030A0;"> """)
     st.title(stsRestrictedAvailability)
 
 with col4:
     st.html("""<p style="font-size:1.5em;color:#FFC000 ">Não Encotrado</p>
-            <hr style="height:1vh;border:none;color:#FFC000;background-color:#FFC000;"> """)
+            <hr style="height:0.5vh;border:none;color:#FFC000;background-color:#FFC000;"> """)
     st.title(stsNaoEncontrado)
 
 s
