@@ -150,9 +150,21 @@ s = dataTable.style\
 
 col1, col2, col3,col4 = st.columns(4)
 with col1:
-    st.markdown(''':green[Vigente] ''')
+ #   st.markdown(''':green[Vigente] ''')
+    st.components.v1.html(
+    f"""
+    <script>
+        var elems = window.parent.document.querySelectorAll('div[class*="stTextInput"] p');
+        var elem = Array.from(elems).find(x => x.innerText == '{"Vigente"}');
+        elem.style.fontSize = 'large'; // the fontsize you want to set it to
+    </script>
+    """
+    ) 
+ 
     st.markdown("""<hr style="height:3px;border:none;color:#4EA72E;background-color:#4EA72E;" /> """, unsafe_allow_html=True) 
     
+ 
+
     #st.subheader("Vigente", divider="green")
     st.title(stsVigente )
 
