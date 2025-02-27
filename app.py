@@ -163,7 +163,7 @@ with col2:
 
 with col3:
     st.html("""<p style="font-size:1.5em;color:#7030A0 ">Restrito</p>
-            <hr style="height:5px;border:none;color:#7030A0;background-color:#7030A0;"> """)
+            <hr style="height:0.01vh;border:none;color:#7030A0;background-color:#7030A0;"> """)
     st.title(stsRestrictedAvailability)
 
 with col4:
