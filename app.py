@@ -152,25 +152,23 @@ s = dataTable.style\
 col1, col2, col3,col4 = st.columns(4)
 with col1:
     st.html("""<p style="font-size:1.5em; ">Vigente</p>
-                <hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;"/> 
+                <hr style="height:5px;border:none;color:#4EA72E;background-color:#4EA72E;"/> 
     """)
     st.title(stsVigente )
 
 with col2:
     st.html("""<p style="font-size:1.5em; ">Obsoleto</p>
-            <hr style="height:8px;border:none;color:#FF0000;background-color:#FF0000;"/> """)
+            <hr style="height:5px;border:none;color:#FF0000;background-color:#FF0000;"/> """)
     st.title(stsObsoleto)
 
 with col3:
-    #st.html("""<p style="font-size:1.5em; ">Restrito</p>
-    #            <hr style="height:8px;border:none;color:#4EA72E;background-color:#4EA72E;"/> """)
     st.html("""<p style="font-size:1.5em; ">Restrito</p>
-            <hr style="height:8px;border:none;color:#7030A0;background-color:#7030A0;"/> """)
+            <hr style="height:5px;border:none;color:#7030A0;background-color:#7030A0;"> """)
     st.title(stsRestrictedAvailability)
 
 with col4:
-    st.html("""<p style="font-size:1.5em; ">Não Encotr.</p>
-            <hr style="height:8px;border:none;color:#FFC000;background-color:#FFC000;"/> """)
+    st.html("""<p style="font-size:1.5em; ">Não Encotrado</p>
+            <hr style="height:5px;border:none;color:#FFC000;background-color:#FFC000;"> """)
     st.title(stsNaoEncontrado)
 
 s
