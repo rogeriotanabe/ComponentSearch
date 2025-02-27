@@ -23,9 +23,15 @@ stsRestrictedAvailability = 0
 
 
 with st.sidebar:
+
+
     uploaded_file = st.file_uploader("Choose a BoM file to evaluate the component availability")
     if uploaded_file is not None:
         df1 = pd.read_csv(uploaded_file)
+
+    url = "https://github.com/rogeriotanabe/ComponentSearch/blob/main/bom.csv"
+    st.write("O template do BoM pode ser acessado no link(%s)" % url)
+    #st.markdown("check out this [link](%s)" % url)
 
 user = st.secrets["mouserCredential"]
 
@@ -189,7 +195,8 @@ with st.sidebar:
 
     fig.patch.set_facecolor('none')
     ax.patch.set_facecolor('none')
-    
+
+
     if stsNaoEncontrado+stsVigente+stsObsoleto!=0:
         ax.pie(sizes, labels=labels,autopct='%1.1f%%',colors=[defBgColorVigente, defBgColorObsoleto,defBgColorRestricted],textprops={'fontsize': 'large'})
 
