@@ -62,6 +62,9 @@ while i<len(df1):
                                 }
 
             dataTable = pd.concat([dataTable,pd.DataFrame.from_dict(data)])
+        
+            compLc = "PN not found"
+            stsNaoEncontrado = stsNaoEncontrado +1
         else:
             for match in res['Parts']:
                 try:
@@ -87,9 +90,7 @@ while i<len(df1):
                     if compLc == "Restricted Availability":
                         compLc = "Restricted Availability"
                         stsRestrictedAvailability = stsRestrictedAvailability+1
-                    if compLc == "PN not found":
-                        compLc = "PN not found"
-                        stsNaoEncontrado = stsNaoEncontrado +1
+                    
                         
                 component
                 compLifecycle
@@ -157,7 +158,7 @@ with col2:
     st.title(stsObsoleto)
 
 with col3:
-    st.subheader("Restricted Availability", divider="red")
+    st.subheader("Restricted Av.", divider="red")
     st.title(stsRestrictedAvailability)
 
 with col4:
